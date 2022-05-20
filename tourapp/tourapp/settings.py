@@ -43,11 +43,13 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'oauth2_provider',
     'drf_yasg',
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -136,7 +138,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'tourdb',
         'USER': 'root',
-        'PASSWORD': '1951050100',
+        'PASSWORD': '05022001',
         'HOST': '' # mặc định localhost
     }
 }
@@ -144,6 +146,8 @@ DATABASES = {
 OAUTH2_PROVIDER = {
     'OAUTH2_BACKEND_CLASS': 'oauth2_provider.oauth2_backends.JSONOAuthLibCore',
 }
+
+
 AUTH_USER_MODEL = 'tours.User'
 MEDIA_ROOT = '%s/tours/static/' % BASE_DIR
 CKEDITOR_UPLOAD_PATH = "images/news/"
@@ -158,6 +162,6 @@ INTERNAL_IPS = [
 ]
 
 OAUTH2_INFO = {
-    "client_id": "Oc1krexXQRrf3LFRraEIhAlr1WrSyQl6QvfJdx4I",
-    "client_secret": "FO7uQpLz83QPPXSTew5vGhkMCtt8znhVNkCaYWJYjWqGhD0FP8kisZfqV5mvQHYFpxRoI1jkQ81aHB7G4YzbDPv8YJ57l96wZCTeluvOCfNoDThpCs9h7OtBXps5kJPK",
+    "client_id": "5GBVi8IUS84H36LvbJ5OwSLOKubynKOu9jiOtmnc",
+    "client_secret": "3eUdRdR1xYqiQVr4YLIfQYuCxM70SqA4SsiZJykAkEvYL3wYhjNtzF4Y7ehHr6Ss2ir10NV2r1kaTYZanUeZOwed1xG55duv5snCAjoGQ2zSGLZo1yxxPKama73AfxVW",
 }

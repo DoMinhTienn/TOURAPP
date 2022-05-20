@@ -104,7 +104,7 @@ class TourCommentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = TourComment
-        exclude = ['active']
+        exclude = [ 'active']
 
 class CreateTourCommentSerializer(serializers.ModelSerializer):
     class Meta:

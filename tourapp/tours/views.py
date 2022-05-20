@@ -75,8 +75,14 @@ class TourDetailViewSet(viewsets.ViewSet, generics.RetrieveAPIView):
                                            adultticketnumber = adultticketnumber,
                                            tour=self.get_object(),
                                            user=request.user)
-            return Response(BookingTourSerializer(c).data, status=status.HTTP_201_CREATED)
+            return Response(BookingTourSerializer(c, context={"request": request}).data, status=status.HTTP_201_CREATED)
         return Response(status=status.HTTP_400_BAD_REQUEST)
+
+    @action(methods=['get'], url_path='idbooking', detail=False)
+    def idBooking(self, request):
+        c = BookingTour.objects.all().last()
+        return Response(BookingTourSerializer(c, context={"request": request}).data, status=status.HTTP_200_OK)
+
 
     @action(methods=['post'], url_path='add-comment', detail=True)
     def add_comment(self, request, pk):
